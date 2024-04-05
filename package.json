@@ -6,9 +6,15 @@
   "scripts": {
     "compile": "hardhat compile",
     "test": "hardhat test",
+    "coverage": "hardhat coverage",
     "deploy": "hardhat run scripts/deploy.js",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "verify": "hardhat run scripts/verify.js",
+    "seed": "hardhat run scripts/seed.js",
     "node": "hardhat node",
-    "frontend": "cd frontend && npm run dev"
+    "frontend": "cd frontend && npm run dev",
+    "lint": "solhint 'contracts/**/*.sol'",
+    "format": "prettier --write 'contracts/**/*.sol' 'test/**/*.js' 'scripts/**/*.js'"
   },
   "keywords": [
     "dao",
@@ -22,11 +28,18 @@
   "license": "MIT",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",
-    "hardhat": "^2.19.4"
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.3",
+    "@nomicfoundation/hardhat-ethers": "^3.0.5",
+    "@nomicfoundation/hardhat-verify": "^2.0.3",
+    "hardhat": "^2.19.4",
+    "hardhat-gas-reporter": "^1.0.9",
+    "solidity-coverage": "^0.8.5",
+    "solhint": "^4.0.0",
+    "prettier": "^3.1.1",
+    "prettier-plugin-solidity": "^1.3.1"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^5.0.1",
     "dotenv": "^16.3.1"
   }
 }
-
