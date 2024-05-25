@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.sol linguist-language=Solidity
+*.js linguist-language=JavaScript
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript
+*.json linguist-detectable=true
+
