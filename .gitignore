@@ -12,11 +12,14 @@ pnpm-lock.yaml
 cache/
 artifacts/
 typechain-types/
+deployments/
+deployment.json
 
 # Environment variables
 .env
 .env.local
 .env.production
+.env.*.local
 
 # IDE
 .vscode/
@@ -24,10 +27,14 @@ typechain-types/
 *.swp
 *.swo
 *~
+.project
+.settings/
 
 # OS
 .DS_Store
 Thumbs.db
+*.bak
+*.tmp
 
 # Build outputs
 dist/
@@ -38,12 +45,22 @@ out/
 # Logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
 
 # Coverage
 coverage/
 .nyc_output/
+coverage.json
 
 # Temporary files
-*.tmp
 .cache/
+tmp/
+temp/
 
+# Gas reports
+gas-report.txt
+
+# Flattened contracts
+flattened/
