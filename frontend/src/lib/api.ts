@@ -5,13 +5,38 @@
 import { IPFS_GATEWAY } from './constants';
 
 /**
- * Upload data to IPFS
+ * Upload data to IPFS using Pinata API
  */
 export async function uploadToIPFS(data: any): Promise<string> {
-  // Implementation for IPFS upload
-  // This is a placeholder - implement with actual IPFS client
-  console.log("Uploading to IPFS:", data);
-  return "QmPlaceholderHash";
+  try {
+    const pinataApiKey = process.env.NEXT_PUBLIC_PINATA_API_KEY;
+    const pinataSecretKey = process.env.NEXT_PUBLIC_PINATA_SECRET_KEY;
+
+    if (!pinataApiKey || !pinataSecretKey) {
+      throw new Error("IPFS credentials not configured");
+    }
+
+    const response = await fetch("https://api.pinata.cloud/pinning/pinJSONToIPFS", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        pinata_api_key: pinataApiKey,
+        pinata_secret_api_key: pinataSecretKey,
+      },
+      body: JSON.stringify({
+        pinataContent: data,
+        pinataMetadata: {
+          name: `OrionDAO-${Date.now()}`,
+        },
+      }),
+    });
+
+    const result = await response.json();
+    return result.IpfsHash;
+  } catch (error) {
+    console.error("Error uploading to IPFS:", error);
+    throw error;
+  }
 }
 
 /**
@@ -58,4 +83,3 @@ export function getTimeRemaining(endTime: Date): string {
   if (days > 0) return `${days}d ${hours}h remaining`;
   return `${hours}h remaining`;
 }
-
