@@ -112,21 +112,26 @@ hardhat run scripts/verify.js --network mainnet
 
 ## Contract Addresses
 
+Contract addresses are generated during deployment and saved in `deployment.json`.
+
 ### Mainnet
-- OrionToken: `TBD`
-- ProposalNFT: `TBD`
-- QuadraticVoting: `TBD`
-- ReputationManager: `TBD`
-- Treasury: `TBD`
-- DAORegistry: `TBD`
+Mainnet deployment will occur after security audit completion.
 
 ### Sepolia Testnet
-- OrionToken: `TBD`
-- ProposalNFT: `TBD`
-- QuadraticVoting: `TBD`
-- ReputationManager: `TBD`
-- Treasury: `TBD`
-- DAORegistry: `TBD`
+Deploy to Sepolia testnet for testing:
+```bash
+npm run deploy:sepolia
+```
+
+Check `deployment.json` for actual addresses after deployment.
+
+Example address format:
+- OrionToken: `0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb`
+- ProposalNFT: `0x0165878A594ca255338adfa4d48449f69242Eb8F`
+- QuadraticVoting: `0xa513E6E4b8f2a923D98304ec87F64353C4D5C853`
+- ReputationManager: `0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6`
+- Treasury: `0x8A791620dd6260079BF849Dc5567aDC3F2FdC318`
+- DAORegistry: `0x610178dA211FEF7D417bC0e6FeD39F05609AD788`
 
 ## Troubleshooting
 

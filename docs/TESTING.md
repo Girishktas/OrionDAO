@@ -33,10 +33,10 @@ npm run coverage
 - OrionToken.test.js
 
 ### Integration Tests
-Coming soon
+See `test/Integration.test.js` for comprehensive integration testing of contract interactions.
 
 ### End-to-End Tests
-Coming soon
+E2E tests will simulate complete user workflows from proposal creation to execution using Cypress.
 
 ## Writing Tests
 
