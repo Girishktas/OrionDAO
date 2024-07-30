@@ -11,10 +11,15 @@
     "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
     "verify": "hardhat run scripts/verify.js",
     "seed": "hardhat run scripts/seed.js",
+    "interact": "hardhat run scripts/interact.js",
+    "gas-analysis": "hardhat run scripts/gas-analysis.js",
+    "flatten": "hardhat run scripts/flatten.js",
     "node": "hardhat node",
     "frontend": "cd frontend && npm run dev",
     "lint": "solhint 'contracts/**/*.sol'",
-    "format": "prettier --write 'contracts/**/*.sol' 'test/**/*.js' 'scripts/**/*.js'"
+    "lint:fix": "solhint 'contracts/**/*.sol' --fix",
+    "format": "prettier --write 'contracts/**/*.sol' 'test/**/*.js' 'scripts/**/*.js'",
+    "clean": "hardhat clean && rm -rf cache artifacts"
   },
   "keywords": [
     "dao",
@@ -22,10 +27,20 @@
     "quadratic-voting",
     "blockchain",
     "ethereum",
-    "defi"
+    "defi",
+    "smart-contracts",
+    "web3"
   ],
   "author": "OrionDAO Team",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Girishktas/OrionDAO.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Girishktas/OrionDAO/issues"
+  },
+  "homepage": "https://github.com/Girishktas/OrionDAO#readme",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.3",
@@ -41,5 +56,9 @@
   "dependencies": {
     "@openzeppelin/contracts": "^5.0.1",
     "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }
