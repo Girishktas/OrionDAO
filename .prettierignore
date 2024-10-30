@@ -1,0 +1,21 @@
+# Ignore artifacts
+cache
+artifacts
+typechain-types
+
+# Ignore dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Ignore build output
+dist
+build
+out
+.next
+
+# Ignore files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
