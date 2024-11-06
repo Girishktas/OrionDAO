@@ -1,0 +1,21 @@
+# Code owners for OrionDAO
+
+# Default owners for everything
+* @Girishktas
+
+# Smart contracts
+/contracts/ @Girishktas @countneurooman
+/test/ @countneurooman
+
+# Frontend
+/frontend/ @Open-FE3 @SuryaeLeo
+
+# Documentation
+/docs/ @TokPeachNoah
+
+# CI/CD
+/.github/ @jdbdbiehdbv
+
+# Security
+/contracts/core/Treasury.sol @claytownene
+
